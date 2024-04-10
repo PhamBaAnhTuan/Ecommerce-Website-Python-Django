@@ -67,7 +67,10 @@ class Cart():
             key = int(key)
             for product in products:
                 if product.id == key:
-                    total = total + (product.price * value)
+                    if product.is_sale:
+                        total = total + (product.sale_price * value)
+                    else:
+                        total = total + (product.price * value)
         return total
 
     def __len__(self):
