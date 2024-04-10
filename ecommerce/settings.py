@@ -100,9 +100,9 @@ DATABASES = {
     }
 }
 
-database_url = os.environ.get('DATABASE_URL')
+# database_url = os.environ.get('DATABASE_URL')
 
-DATABASES['default'] = dj_database_url.parse(database_url)
+DATABASES['default'] = dj_database_url.parse('postgres://ecommerce_django_9g1g_user:Zipkxes7P0fNUtF3CRNk4E0ahHpjrb7V@dpg-cob3cfa1hbls73alokrg-a.oregon-postgres.render.com/ecommerce_django_9g1g')
 
 
 
