@@ -26,9 +26,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', "False").lower() == "True"
+# DEBUG = True
 
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
-# ALLOWED_HOSTS=['*']
+# ALLOWED_HOSTS=['127.0.0.1']
 
 # Application definition
 
@@ -100,9 +101,9 @@ DATABASES = {
     }
 }
 
-# database_url = os.environ.get('DATABASE_URL')
+database_url = os.environ.get('DATABASE_URL')
 
-DATABASES['default'] = dj_database_url.parse('postgres://ecommerce_django_9g1g_user:Zipkxes7P0fNUtF3CRNk4E0ahHpjrb7V@dpg-cob3cfa1hbls73alokrg-a.oregon-postgres.render.com/ecommerce_django_9g1g')
+DATABASES['default'] = dj_database_url.parse(database_url)
 
 
 
@@ -141,9 +142,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = "/static/"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
-STATIC_ROOT = BASE_DIR / "staticfiles" 
+STATIC_ROOT = BASE_DIR/"staticfiles" 
 
 
 MEDIA_URL = 'media/'
