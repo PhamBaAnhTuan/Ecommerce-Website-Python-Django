@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <header class="bg-success py-2">
+    <header class="bg-success py-1">
         <div class="container px-3 px-lg-5 my-5">
             <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">User info</h1>
+                <h1 class="display-5 fw-bolder">User Information</h1>
             </div>
         </div>
     </header>
@@ -14,12 +14,12 @@
                 <div class='col-8 py-5'>
                     <form method="POST"  action="{% url 'update_info' %}">
                         {% csrf_token %}
-                        <strong>Billing Information</strong>
+                        <strong>Card Information</strong>
                         <br>
                         <br>
                         {{ form.as_p}}
                         <br>
-                        <strong>Shipping Information</strong>
+                        <strong>Address Information</strong>
                         <br>
                         <br>
                         {{shipping_form.as_p}}

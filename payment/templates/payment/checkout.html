@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-    <header class="bg-success py-5">
+    <header class="bg-success py-1">
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Checkout</h1>
+                <h1 class="display-5 fw-bolder">Payment</h1>
             </div>
         </div>
     </header>
@@ -36,7 +36,7 @@
               </ul>
             </div>
             <div class="col-md-8 order-md-1">
-                <h4 class="mb-3">Shipping Information</h4>
+                <h4 class="mb-3">Address Information</h4>
                 {{ shipping_form.as_p }}
                 <hr class="mb-4">
                 <button class="btn btn-success btn-lg btn-block" type="submit">Continue to checkout</button>

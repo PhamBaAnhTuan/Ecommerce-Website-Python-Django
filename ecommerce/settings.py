@@ -21,20 +21,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
-# SECRET_KEY = 'f3dbfbb222a60dcda4fb0cd83f5484e3'
+# SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = 'f3dbfbb222a60dcda4fb0cd83f5484e3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', "False").lower() == "True"
-# DEBUG = True
+# DEBUG = os.environ.get('DEBUG', "False").lower() == "True"
+DEBUG = True
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
-# ALLOWED_HOSTS=[]
+
+ALLOWED_HOSTS=[]
 
 # Application definition
 
-INSTALLED_APPS = [
-    "whitenoise.runserver_nostatic", 
+INSTALLED_APPS = [ 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -56,18 +55,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware", 
 ]
 
-STORAGES = { 
-    "staticfiles": { 
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage", 
-    }, 
-} 
-
-WHITENOISE_USE_FINDERS = True 
-WHITENOISE_MANIFEST_STRICT = False 
-WHITENOISE_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'ecommerce.urls'
 
@@ -101,9 +90,6 @@ DATABASES = {
     }
 }
 
-database_url = os.environ.get('DATABASE_URL')
-
-DATABASES['default'] = dj_database_url.parse(database_url)
 
 #'postgres://ecommerce_django_9g1g_user:Zipkxes7P0fNUtF3CRNk4E0ahHpjrb7V@dpg-cob3cfa1hbls73alokrg-a.oregon-postgres.render.com/ecommerce_django_9g1g'
 

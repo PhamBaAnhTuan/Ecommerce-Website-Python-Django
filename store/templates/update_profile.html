@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <header class="bg-success py-2">
+    <header class="bg-success py-1">
         <div class="container px-3 px-lg-5 my-5">
             <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Profile</h1>
+                <h1 class="display-5 fw-bolder">Profile</h1>
             </div>
         </div>
     </header>
@@ -15,7 +15,7 @@
                     <form method="POST"  action="{% url 'update_profile' %}">
                         {% csrf_token %}
                         {{ user_form.as_p}}
-                        <button type="submit" class="btn btn-secondary mt-2">Save Changes</button>
+                        <button type="submit" class="btn btn-warning mt-2">Save Changes</button>
                     </form>
                 </div>
             </center>
